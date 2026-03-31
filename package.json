@@ -1,0 +1,18 @@
+{
+	"name":"mcp-server-dm8",
+	"version":"1.0.0",
+	"description":"达梦数据库 MCP 服务器",
+	"type":"module",
+	"main":"mcp-dameng.js",
+	"scripts":{
+		"test":"node mcp-dameng.js"
+	},
+	"keywords":[],
+	"author":"",
+	"license":"ISC",
+	"dependencies":{
+		"@modelcontextprotocol/sdk":"^1.29.0",
+		"dmdb":"^1.0.48286",
+		"dotenv":"^17.3.1"
+	}
+}
