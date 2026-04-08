@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import 'dotenv/config';
 import {McpServer} from '@modelcontextprotocol/sdk/server/mcp.js';
 import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -324,7 +325,10 @@ server.tool(
 	'查看指定表的前N行数据样本，返回表名、行数、字段名列表和数据行。limit参数自动修正：小于1时修正为1，大于1000时限制为1000。',
 	{
 		table_name:z.string().describe('要查看的表名称(只支持字母/数字/下划线/横线组成的合法表名)'),
-		limit:z.number().optional().default(10).describe('返回行数，范围1-1000，默认10，超出范围自动修正'),
+		limit:z.number()
+			.optional()
+			.default(10)
+			.describe('返回行数，范围1-1000，默认10，超出范围自动修正'),
 	},
 	async({table_name, limit = 10}) => {
 		try{
