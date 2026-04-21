@@ -354,9 +354,6 @@ server.tool(
 async function main(){
 	const transport = new StdioServerTransport();
 	await server.connect(transport);
-	console.error('✅ 达梦 DM8 MCP 服务启动成功！');
-	console.error(`   连接信息: ${DM_USER}@${DM_HOST}:${DM_PORT}`);
-	console.error(`   配置: fetchAsString=[CLOB, BUFFER], maxRows=${MAX_ROWS}`);
 }
 main().catch((error) => {
 	console.error('❌ 启动失败:', error);
